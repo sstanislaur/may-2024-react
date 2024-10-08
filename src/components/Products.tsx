@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import Product from "./Product";
 
-const Products = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+interface ProductType {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    category: string;
+    brand: string;
+    thumbnail: string;
+}
+
+const Products: React.FC = () => {
+    const [products, setProducts] = useState<ProductType[]>([]); // Типізуємо масив продуктів
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products")

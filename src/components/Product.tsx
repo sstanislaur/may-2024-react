@@ -1,6 +1,18 @@
-import React from "react";
+import React, {FC} from "react";
 
-const Product = ({product}) => {
+interface IProps {
+    product: {
+        id: number;
+        title: string;
+        description: string;
+        price: number;
+        category: string;
+        brand: string;
+        thumbnail: string;
+    };
+}
+
+const Product: FC<IProps> = ({product}) => {
     return (
         <div>
             <h2>{product.title}</h2>
