@@ -1,13 +1,20 @@
 import React from 'react';
-import './App.css';
-import Products from "./components/Products";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Users from './pages/Users';
+import Posts from './pages/Posts';
+import Comments from './pages/Comments';
 
-function App() {
+const App: React.FC = () => {
     return (
-        <div>
-            <h1>Product List</h1>
-            <Products/>
-        </div>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/users" element={<Users />} />
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/comments" element={<Comments />} />
+            </Routes>
+        </Router>
     );
 }
 
