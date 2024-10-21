@@ -1,14 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductList from './components/ProductList';
 import './App.css';
-import Products from "./components/Products";
 
-function App() {
+const App: React.FC = () => {
     return (
-        <div>
-            <h1>Product List</h1>
-            <Products/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<ProductList />} />
+            </Routes>
+        </Router>
     );
-}
+};
 
 export default App;

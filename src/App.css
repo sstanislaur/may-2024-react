@@ -1,12 +1,4 @@
-h1, h2, p {
-  text-align: center;
-}
-
-img {
-  width: 500px;
-  margin-left: 500px;
-}
-
-h1 {
-  font-size: 35px;
+ button {
+    background: cornflowerblue;
+    color: black;
 }
